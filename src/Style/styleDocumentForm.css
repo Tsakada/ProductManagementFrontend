@@ -1,0 +1,287 @@
+
+/* ====================== Style document ============================== */
+    /* th {
+        font-weight: normal;
+    } */
+
+    .page-container-document-main {
+        background-color: #fff;
+        width: 100%;        
+        border-radius: 10px;
+    }
+  
+    .page-document-logo-size {
+        width: 100px; 
+    }
+    
+    .page-header-document-title-main {
+        font-weight: bold;
+        margin-top: 15px;
+        text-transform: uppercase;
+        color: #1d4592;
+    }
+
+    
+    div.page-footer-main {
+        text-align: center;
+        height: 50px;
+        font-size: 10px;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+
+    div.document-page-footer-main {
+        text-align: center;
+        margin-top: 50px;
+        height: 80px;
+        font-size: 10px;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    div.page-footer-main p {
+        margin: 0;
+    }
+  
+    .watermark {
+        display: none;
+        top: 50vh;
+        z-index: -9;
+        width: 50vw;
+        page-break-after: always;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: .1;
+    }
+  
+
+    .document-watermark-header {
+        display: none;
+        width: 100%;
+        height: calc(10vh - 20mm);        
+        top: 90vh;  
+        margin-bottom: 50px; 
+    }
+    
+
+
+    table.document-container-main {
+        /* page-break-after: always; */
+        width: 100% !important;  
+        /* display: table; */
+        /* overflow-x: auto; */
+        /* white-space: nowrap; */
+        border-spacing: 0px !important;
+    }
+
+    
+
+    thead.document-header-main {
+        display: table-header-group;
+    }
+  
+
+
+    tfoot.document-footer-main {
+        display: table-footer-group;
+    }
+
+
+
+    tbody.document-content-body {
+        width: 100% !important;
+    }
+  
+
+    div.footer-info-main, div.page-footer-main {
+        display: none;
+        height: 40px;
+    }
+
+    div.document-footer-info-main, div.document-page-footer-main {
+        display: none; 
+        height: 0px;
+        padding-top: 50px;
+    } 
+
+  
+    .page-footer-line-main {
+        border: 1px solid rgba(0, 0, 0, 0.338);
+        margin-bottom: 7px;
+    }
+
+
+    div.page-footer-text-main {
+        text-align: center;
+        color: black;
+        font-family: "Khmer OS Siemreap";
+        font-size: 9px;
+    }
+  
+
+    /* ========== style head table ========== */
+    .header-title-document-main {    
+        font-size: 10px !important; 
+        font-weight: bold;
+        padding: 4px 6px; 
+        font-family: "Khmer OS Siemreap";
+        border: 0.2px solid #000 !important; 
+    }
+    
+
+    .document-title-cell-center-bold-main {
+        font-size: 12px !important;
+        text-align: center;   
+        font-family: "Century Gothic";
+        color: white;
+        text-transform: capitalize !important;
+        font-weight: bold;
+        padding: 4px 6px;
+        border: 0.2px solid #000 !important;
+        background-color: #177A02;
+    }
+  
+    /* =========== style body table ============ */
+   
+    .document-text-field-box {
+        background-color: white;
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        border-bottom: 1px solid black;
+    }
+
+    .document-text-field-table {
+        background-color: white;
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        border-bottom: 0px;
+    }
+
+
+    .document-head-box-en {
+        font-size: 12px !important; 
+        font-weight: bold;
+        /* font-family: "Times New Roman"; */
+    }
+
+    .document-head-box-kh {
+        font-size: 12px !important;  
+        font-family: "Khmer OS Muol Light";
+    }
+
+    .documnet-box-decription {
+        border: 3px solid black;
+        padding: 10px; 
+    }
+    .documnet-box-decription1 {
+        border: 1px solid black;
+        padding: 30px; 
+    }
+
+    .document-body-box-bold {
+        font-size: 10px !important;  
+        font-family: "Khmer OS Siemreap";
+        font-weight: bold;
+        color: #000;
+    }   
+    
+    .document-body-box {
+        font-size: 10px !important;  
+        font-family: "Khmer OS Siemreap"; 
+        color: #000;
+    }  
+
+    .document-body-box-training {
+        font-size: 12px !important;  
+        font-family: "Khmer OS Siemreap"; 
+        color: #000;
+    }
+
+    .document-body-box-assiat {
+        font-size: 12px !important;  
+        font-family: "Khmer OS Siemreap"; 
+        color: #000;
+    } 
+
+    .document-content-cell-left-body {       
+        font-size: 13px !important; 
+        padding: 4px 6px; 
+        font-family: "Khmer OS Siemreap";
+    }
+      
+    .document-content-cell-center-body {     
+        text-align: center;
+        font-size: 13px !important; 
+        padding: 4px 6px; 
+        font-family: "Khmer OS Siemreap";
+        border: 0.2px solid #000 !important;
+    } 
+
+    .document-content-cell-right-body {      
+        text-align: right; 
+        font-size: 13px !important; 
+        padding: 4px 6px; 
+        font-family: "Khmer OS Siemreap";
+    }
+  
+    /* ========================  for only print ====================== */
+    .document-print-body {
+        font-size: 13px !important; 
+        padding: 4px 6px; 
+        font-family: "Khmer OS Siemreap";
+    }
+  
+    .document-print-body-center {
+        text-align: center !important;
+        font-size: 13px !important; 
+        padding: 4px 6px; 
+        font-family: "Khmer OS Siemreap";
+    }
+
+    .document-print-body-right {
+        text-align: right;
+        font-size: 13px !important; 
+        padding: 4px 6px; 
+        font-family: "Khmer OS Siemreap";
+    }
+
+    @media print {
+        @page {
+            /* size: A4; */
+            margin: 0mm 3mm 2mm 3mm;
+            background-color: #0f80c2;
+        }
+        
+        /* .watermark {
+            display: block;
+            counter-increment: page;
+            position: fixed;
+        } */
+
+
+        .document-watermark-header { 
+            display: block;
+            counter-increment: page;
+            position: fixed;
+        }
+
+    
+        div.page-footer-main, div.footer-info-main {
+            display: block;
+        }
+
+        div.document-page-footer-main, div.document-footer-info-main {
+            display: block;
+        }
+ 
+    }
+  
+  /* ====================== End Style document ============================== */
+  

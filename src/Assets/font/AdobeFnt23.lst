@@ -1,0 +1,183 @@
+%!Adobe-FontList 1.23
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Bayon-Regular
+FamilyName:Bayon
+StyleName:Regular
+FullName:Bayon Regular
+MenuName:Bayon
+StyleBits:0
+WritingScript:Khmer
+OutlineFileName:D:\PHOEM\ProjectCode\HR-LeapAnkgor-FrontEnd-V1\src\Assets\Font\Bayon-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:54600
+FileModTime:1702369169
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Bayon
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Bayon-Regular
+FamilyName:Bayon
+StyleName:Regular
+FullName:Bayon Regular
+MenuName:Bayon
+StyleBits:0
+WritingScript:Khmer
+OutlineFileName:D:\PHOEM\ProjectCode\HR-LeapAnkgor-FrontEnd-V1\src\Assets\Font\Bayon.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:54572
+FileModTime:1702369169
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Bayon
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CenturyGothic
+FamilyName:Century Gothic
+StyleName:Regular
+FullName:Century Gothic
+MenuName:Century Gothic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\PHOEM\ProjectCode\HR-LeapAnkgor-FrontEnd-V1\src\Assets\Font\GOTHIC.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:137568
+FileModTime:1702369169
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Century Gothic
+NameArray:0,Win,1,Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CenturyGothic-Bold
+FamilyName:Century Gothic
+StyleName:Bold
+FullName:Century Gothic Bold
+MenuName:Century Gothic
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:D:\PHOEM\ProjectCode\HR-LeapAnkgor-FrontEnd-V1\src\Assets\Font\GOTHICB.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:129676
+FileModTime:1702369169
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Century Gothic Bold
+NameArray:0,Win,1,Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CenturyGothic-BoldItalic
+FamilyName:Century Gothic
+StyleName:Bold Italic
+FullName:Century Gothic Bold Italic
+MenuName:Century Gothic
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:D:\PHOEM\ProjectCode\HR-LeapAnkgor-FrontEnd-V1\src\Assets\Font\GOTHICBI.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:139084
+FileModTime:1702369169
+WeightClass:700
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Century Gothic Bold Italic
+NameArray:0,Win,1,Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CenturyGothic-Italic
+FamilyName:Century Gothic
+StyleName:Italic
+FullName:Century Gothic Italic
+MenuName:Century Gothic
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:D:\PHOEM\ProjectCode\HR-LeapAnkgor-FrontEnd-V1\src\Assets\Font\GOTHICI.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:148520
+FileModTime:1702369169
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Century Gothic Italic
+NameArray:0,Win,1,Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Kantumruy-Regular
+FamilyName:Kantumruy
+StyleName:Regular
+FullName:Kantumruy Regular
+MenuName:Kantumruy
+StyleBits:0
+WritingScript:Khmer
+OutlineFileName:D:\PHOEM\ProjectCode\HR-LeapAnkgor-FrontEnd-V1\src\Assets\Font\Kantumruy.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:34644
+FileModTime:1702369169
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Kantumruy
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Siemreap
+FamilyName:Siemreap
+StyleName:Regular
+FullName:Siemreap
+MenuName:Siemreap
+StyleBits:0
+WritingScript:Khmer
+OutlineFileName:D:\PHOEM\ProjectCode\HR-LeapAnkgor-FrontEnd-V1\src\Assets\Font\Siemreap-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:182372
+FileModTime:1702369169
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Siemreap
+%EndFont
+

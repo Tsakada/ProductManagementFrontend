@@ -1,0 +1,237 @@
+
+/* ====================== Style payslip ============================== */
+    /* th {
+        font-weight: normal;
+    } */
+
+    .page-container-payslip-main {
+        background-color: #fff;
+        width: 100%;        
+        border-radius: 10px;
+    }
+  
+    .page-payslip-logo-size {
+        width: 40px;
+    }
+    
+    .page-header-payslip-title-main {
+        font-weight: bold;
+        margin-top: 15px;
+        text-transform: uppercase;
+        color: #1d4592;
+    }
+
+    
+    div.page-footer-main {
+        text-align: center;
+        height: 50px;
+        font-size: 10px;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    div.page-footer-main p {
+        margin: 0;
+    }
+  
+    .watermark {
+        display: none;
+        top: 50vh;
+        z-index: -9;
+        width: 50vw;
+        page-break-after: always;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: .1;
+    }
+  
+    table.payslip-container-main {
+        page-break-after: always;
+        width: 100% !important;
+        /* display: table;
+        overflow-x: auto; */
+        /* white-space: nowrap; */
+        border-spacing: 0px !important;
+    }
+    
+    thead.payslip-header-main {
+        display: table-header-group;
+    }
+  
+    tfoot.payslip-footer-main {
+        display: table-footer-group;
+    }
+  
+    tbody.payslip-content-main {
+        width: 100% !important;
+    }
+  
+    div.footer-info-main, div.page-footer-main {
+        display: none;
+        height: 40px;
+    }
+  
+    .page-footer-line-main {
+        border: 1px solid rgba(0, 0, 0, 0.338);
+        margin-bottom: 7px;
+    }
+  
+    div.page-footer-text-main {
+        text-align: center;
+        color: black;
+        font-family: "Khmer OS Siemreap";
+        letter-spacing: normal !important;
+    }
+  
+
+    .payslip-title-font-kh {
+        font-family: "Khmer OS Muol Light";
+        letter-spacing: normal !important;
+    }
+
+    .payslip-body-font-kh {
+        font-family: "Khmer OS Siemreap";
+        letter-spacing: normal !important;
+    }
+
+    .payslip-title-font-en {
+        font-family: "Century Gothic";
+        font-weight: bold;
+    }
+
+    .payslip-body-font-en {
+        font-family: "Century Gothic"; 
+    }
+
+    /* ========== style head table ========== */
+    .header-title-payslip-main {        
+        text-align: center;
+        font-size: 12px !important; 
+        padding: 4px;
+        border: 0.2px solid #000 !important; 
+        color: black;
+    }
+
+    .payslip-title-cell-center-bold-main {
+        font-size: 12px !important;
+        text-align: center;   
+        font-family: "Century Gothic";
+        color: white;
+        text-transform: capitalize !important;
+        font-weight: bold;
+        padding: 4px 6px;
+        border: 0.2px solid #000 !important;
+        background-color: #177A02;
+    }
+  
+    /* =========== style body table ============ */
+   
+    .payslip-content-cell-center-main {        
+        font-size: 11px !important;
+        text-align: center;        
+        padding: 4px 6px;
+        border: 0.2px solid #000 !important;
+        color: black;
+    }
+
+    .payslip-content-cell-center-bold-main {        
+        font-size: 15px !important;
+        text-align: center;        
+        font-weight: bold;
+        padding: 4px 6px;
+        border: 0.2px solid #000 !important;
+    }
+    
+
+    .payslip-content-cell-left-bold-main {        
+        font-size: 15px !important;    
+        font-weight: bold;            
+        padding: 4px 6px;
+        border: 0.2px solid #000 !important;
+    }
+
+
+    .payslip-content-cell-left-bold-bg-main {        
+        font-size: 15px !important;    
+        font-weight: bold;            
+        padding: 4px 6px;
+        border: 0.2px solid #000 !important;
+        background-color: #1d4592;
+        color: white;
+    }
+
+
+    .payslip-content-cell-left-main {       
+        font-size: 12px !important;                     
+        padding: 4px 7px;
+        border: 0.2px solid #000 !important;
+        font-family: "Khmer OS Siemreap";
+        letter-spacing: normal !important;
+        color: black;
+    } 
+
+    .payslip-content-cell-center-main {        
+        font-size: 12px !important;                     
+        padding: 4px 7px;
+        border: 0.2px solid #000 !important;
+        font-family: "Khmer OS Siemreap";
+        letter-spacing: normal !important;
+        text-align: center;
+        color: black;
+    }
+
+    .payslip-content-cell-right-main {        
+        font-size: 12px !important;                     
+        padding: 4px 7px;
+        border: 0.2px solid #000 !important;
+        font-family: "Khmer OS Siemreap";
+        letter-spacing: normal !important;
+        text-align: right;
+        color: black;
+    }
+ 
+  
+    .payslip-content-cell-left-main-bg {
+        font-size: 12px !important;                     
+        padding: 4px 7px;
+        border: 0.2px solid #000 !important;
+        font-family: "Khmer OS Siemreap";
+        letter-spacing: normal !important; 
+        color: rgb(255, 255, 255);
+        background-color: #0f80c2;
+    }
+
+    .payslip-content-cell-center-main-bg {
+        font-size: 12px !important;                     
+        padding: 4px 7px;
+        border: 0.2px solid #000 !important;
+        font-family: "Khmer OS Siemreap";
+        letter-spacing: normal !important; 
+        color: white;
+        background-color: #177A02;
+    }
+
+  
+    @media print {
+        @page {
+            /* size: A4; */
+            margin: 0mm 3mm 2mm 3mm;
+            background-color: #0f80c2;
+        }
+        
+        .watermark {
+            display: block;
+            counter-increment: page;
+            position: fixed;
+        }
+    
+        div.page-footer-main, div.footer-info-main {
+            display: block;
+        }
+
+    }
+  
+  /* ====================== End Style payslip ============================== */
+  

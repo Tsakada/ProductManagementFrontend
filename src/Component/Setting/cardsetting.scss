@@ -1,0 +1,17 @@
+.setting-card{
+    padding: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: rgba(195, 201, 207, 0.2) 0px 8px 24px;
+    .image-card{
+        width: 70px;
+    } 
+    .title-card{
+        font-weight: bold;
+        font-size: 22px;
+    }
+    .description-card{ 
+        font-size: 18px;
+    }
+}

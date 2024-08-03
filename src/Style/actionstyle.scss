@@ -1,0 +1,127 @@
+@import "../themes.scss";
+
+.more-icon {
+  color: $primary-color !important;
+}
+
+.update-icon {
+  color: $primary-color;
+  font-size: 20px !important;
+}
+
+.delete-icon {
+  color: $background-delete;
+  font-size: 21px !important;
+}
+
+.update-title {
+  font-family: $font-title;
+  font-size: $font-Size-subtitle !important;
+}
+
+// =============================== new style version =================================
+
+.update-container {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+
+  background-color: $primary-color !important;
+
+  .update-icon {
+    background-color: $primary-color !important;
+    color: #fff;
+    margin-bottom: 2px;
+    font-size: 14px !important;
+  }
+}
+
+.reset-container {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background-color: #607d8b !important;
+  .reset-icon {
+    color: #fff;
+    margin-bottom: 2px;
+    font-size: 14px !important;
+    &:hover {
+      background-color: #607d8b !important;
+    }
+  }
+}
+
+.status-container {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background-color: #fff !important;
+  border: 1px solid#178BE2;
+
+  .status-icon {
+    background-color: #fff !important;
+    color: #178be2;
+    margin-bottom: 2px;
+    font-size: 15px !important;
+  }
+}
+
+.view-container {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background-color: #fff !important;
+  border: 1px solid green; 
+
+  .view-icon {
+    background-color: #fff !important;
+    color: green;
+    margin-bottom: 2px;
+    font-size: 15px !important;
+  }
+}
+
+.update-salary-container {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background-color: #fff !important;
+  border: 1px solid grey;
+
+  .update-salary-icon {
+    background-color: #fff !important;
+    color: grey;
+    margin-bottom: 1px;
+    font-size: 18px !important;
+  }
+}
+
+.print-container {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid #178be2;
+  background-color: #fff !important;
+
+  .print-icon {
+    color: #178be2;
+    margin-bottom: 2px;
+    font-size: 16px !important;
+    background-color: #fff !important;
+  }
+}
+
+.delete-container {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background-color: #fff !important;
+  border: 1px solid $background-delete;
+
+  .delete-icon {
+    background-color: #fff !important;
+    color: $background-delete;
+    margin-bottom: 2px;
+    font-size: 15px !important;
+  }
+}

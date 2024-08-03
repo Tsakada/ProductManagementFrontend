@@ -1,0 +1,471 @@
+@import "../themes.scss";
+
+.dialog-container {
+  .bg-title-box {
+    background-color: $primary-color;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+  }
+
+  .dialog-title-en {
+    font-weight: bold;
+    color: $primary-color;
+    font-family: $font-title;
+    font-size: $font-Size-title;
+  }
+
+  .option-box {
+    width: 100%;
+    padding: 14px;
+    border-radius: 5px;
+    background-color: #f0f3f6;
+
+    .option-point {
+      font-size: 11px;
+      color: #327ac2;
+      font-weight: 600;
+      font-family: $font-title;
+    }
+  }
+
+  // tailog header
+  .btn-create {
+    font-family: $font-title;
+    font-size: $font-Size-description;
+    font-weight: bold;
+    background-color: $primary-color !important;
+    color: #fff;
+    padding: 8px 0px;
+    border-radius: 5px;
+    box-shadow: none;
+    text-transform: none;
+    margin: 0px 17px 16px 17px;
+  }
+
+  .btn-create-kh {
+    font-family: $font-second;
+    font-size: $font-Size-description;
+    font-weight: bold;
+    background-color: $primary-color !important;
+    color: #fff;
+    padding: 8px 0px;
+    border-radius: 5px;
+    box-shadow: none;
+    text-transform: none;
+    margin: 0px 17px 16px 17px;
+  }
+
+  // dailog header
+  .btn-reset {
+    font-family: $font-title;
+    font-size: $font-Size-description;
+    font-weight: bold;
+    background-color: red !important;
+    color: #fff;
+    padding: 8px 0px;
+    border-radius: 5px;
+    box-shadow: none;
+    text-transform: none;
+    margin: 0px 17px 16px 17px;
+  }
+
+  .btn-reset-kh {
+    color: #fff;
+    padding: 8px 0px;
+    box-shadow: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    text-transform: none;
+    font-family: $font-second;
+    margin: 0px 17px 16px 17px;
+    font-size: $font-Size-description;
+    background-color: red !important;
+  }
+
+  .dialog-title-kh {
+    font-size: $font-Size-title;
+    color: $primary-color;
+    font-weight: bold;
+    font-family: $font-second;
+  }
+
+  .close-icon {
+    color: red;
+  }
+
+  .avater-image {
+    width: 160px;
+    height: 185px;
+    // object-fit: cover !important;
+    // object-fit: cover !important;
+  }
+
+  .avater-image-user {
+    width: 160px;
+    height: auto;
+    object-fit: cover !important;
+    // object-fit: cover !important;
+  }
+
+  .employee-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .bg-title-en {
+    margin-bottom: 3px;
+    font-family: $font-title;
+    font-size: $font-Size-description;
+    font-weight: bold;
+  }
+
+  .bg-title-kh {
+    margin-bottom: 3px;
+    font-family: $font-second;
+    font-size: $font-Size-description;
+    font-weight: bold;
+  }
+
+  .field-title-en {
+    margin-bottom: 3px;
+    color: $primary-color;
+    font-family: $font-title;
+    font-size: $font-Size-description;
+    font-weight: bold;
+  }
+
+  .field-title-kh {
+    margin-bottom: 3px;
+    color: $primary-color;
+    font-family: $font-second;
+    font-size: $font-Size-description;
+    font-weight: bold;
+
+    .css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input {
+      font-family: $font-second;
+    }
+  }
+  .date-picker-field {
+    width: 100% !important;
+    border-radius: 6px;
+    padding: 0px;
+    background-color: #fff;
+    font-size: $font-Size-description;
+    font-family: $font-body !important;
+    justify-content: center !important;
+    .MuiOutlinedInput-root { 
+      .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+        padding: 8.5px 14px !important;
+      }
+      .css-1uvydh2 {
+        padding: 8.5px 14px !important;
+      }
+    } 
+  }
+
+  .field-title-en-break {
+    // color: $primary-color;
+    font-family: $font-title;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .field-title-kh-break {
+    // color: $primary-color;
+    font-family: $font-second;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .field-logout-title-en {
+    color: $primary-color;
+    font-family: $font-title;
+    font-size: $font-Size-title;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .field-logout-title-kh {
+    color: $primary-color;
+    font-family: $font-second;
+    font-size: $font-Size-title;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .field-logout-des-en {
+    color: $primary-color;
+    font-family: $font-title;
+    font-size: $font-Size-description;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .field-logout-des-kh {
+    color: $primary-color;
+    font-family: $font-second;
+    font-size: $font-Size-description;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .field-header {
+    margin-bottom: 3px;
+    color: #177a02;
+    font-family: "Century Gothic";
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .field-title-name {
+    font-size: $font-Size-subtitle;
+    color: $primary-color;
+    font-weight: bold;
+    font-family: $font-title;
+  }
+
+  .btn-reset-create {
+    margin-top: 10px;
+    padding: 8px 0px;
+    background-color: red !important;
+    color: #fff;
+    border-radius: 5px;
+    font-family: $font-title;
+    font-weight: bold;
+    box-shadow: none;
+
+    .style-reset-en {
+      color: $secondary-color;
+      font-size: $font-Size-description;
+      font-weight: bold;
+      text-transform: none;
+      font-family: $font-title;
+    }
+
+    .style-reset-kh {
+      color: $secondary-color;
+      font-size: $font-Size-description;
+      font-weight: bold;
+      text-transform: none;
+      font-family: $font-second;
+    }
+  }
+
+  .btn-delete {
+    margin-top: 10px;
+    padding: 8px 0px;
+    background-color: $background-delete !important;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: $font-title;
+  }
+
+  .btn-print {
+    background-color: $primary-color !important;
+    font-size: $font-Size-subtitle;
+    color: #fff;
+    text-align: center;
+  }
+
+  //delete
+  .MuiPaper-root {
+    border-radius: 12px !important;
+
+    .css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input {
+      font-family: $font-second;
+    }
+  }
+
+  .close-icon {
+    color: red;
+    cursor: pointer;
+  }
+
+  .title-en {
+    font-weight: bold;
+    color: $primary-color;
+    font-family: $font-title;
+  }
+
+  .title-kh {
+    font-weight: bold;
+    color: $primary-color;
+    font-family: $font-second;
+  }
+
+  .field-text-en {
+    font-size: $font-Size-subtitle;
+    font-family: $font-title;
+  }
+
+  .field-text-kh {
+    font-size: $font-Size-subtitle;
+    font-family: $font-second;
+  }
+
+  .body-title {
+    color: $primary-color;
+  }
+
+  .import-image {
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+    // box-shadow: 1px 4px 5px 0px rgba(39, 39, 39, 0.19);
+    // -webkit-box-shadow: 1px 4px 5px 0px rgba(39, 39, 39, 0.19);
+    // -moz-box-shadow: 1px 4px 5px 0px rgba(39, 39, 39, 0.19);
+  }
+
+  .profile-title-en {
+    text-align: center;
+    font-size: $font-Size-subtitle;
+    color: $primary-color;
+    font-weight: bold;
+    font-family: $font-title;
+  }
+
+  .profile-title-kh {
+    text-align: center;
+    font-size: $font-Size-subtitle;
+    color: $primary-color;
+    font-weight: bold;
+    font-family: $font-second;
+  }
+
+  .header-info-pre-detail {
+    background-color: #ddf0fe;
+    border-radius: 4px;
+    padding: 9px 12px 7px 12px;
+
+    .header-info-pre-detail {
+      width: 50%;
+      color: #147bc9;
+      font-family: $font-title;
+      font-size: $font-Size-description;
+      font-weight: bold;
+    }
+
+    .header-info-text-khmer-pre-detail {
+      color: #147bc9;
+      font-family: $font-second;
+      font-size: $font-Size-description;
+      font-weight: bold;
+    }
+
+    .header-info-text-edu-pre-detail {
+      color: #147bc9;
+      font-family: $font-title;
+      font-size: $font-Size-description;
+      font-weight: bold;
+    }
+
+    .header-info-text-address-pre-detail {
+      width: 100%;
+      color: #147bc9;
+      font-family: $font-title;
+      font-size: $font-Size-description;
+    }
+  }
+
+  .body-info-pre-detail {
+    padding: 15px;
+
+    .body-info-text-pre-detail-en {
+      // width: 50%;
+      font-size: $font-Size-description;
+      font-family: $font-title;
+      color: black;
+      font-weight: 500;
+    }
+
+    .body-info-text-pre-detail-kh {
+      // width: 50%;
+      font-size: $font-Size-description;
+      font-family: $font-second;
+      color: black;
+      font-weight: 500;
+    }
+
+    .body-info-text-khmer-pre-detail {
+      width: 50%;
+      font-size: $font-Size-description;
+      font-family: $font-second;
+      color: black;
+      font-weight: 500;
+    }
+
+    .body-info-text-edu-pre-detail {
+      width: 33%;
+      font-size: $font-Size-description;
+      font-family: $font-title;
+      color: black;
+      font-weight: 500;
+    }
+
+    .body-info-text-address-pre-detail {
+      width: 100%;
+      font-size: $font-Size-description;
+      font-family: $font-title;
+      color: black;
+      font-weight: 500;
+    }
+  }
+
+  // ================================= style delete ==========================
+  .confirm-val-title {
+    color: $background-delete;
+    font-family: $font-title;
+    font-weight: bold;
+  }
+
+  .body-delete-en {
+    color: $background-delete;
+    font-family: $font-title;
+    font-weight: bold;
+  }
+
+  .body-delete-kh {
+    color: $background-delete;
+    font-family: $font-second;
+    font-weight: bold;
+  }
+
+  .btn-delete-en {
+    color: #fff;
+    border: none;
+    padding: 8px 0px;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: $font-title !important;
+    margin: 0px 18px 20px 18px !important;
+    background-color: $background-delete !important;
+  }
+
+  .btn-delete-kh {
+    background-color: $background-delete !important;
+    font-family: $font-second !important;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    margin: 0px 18px 20px 18px !important;
+    padding: 8px 0px;
+    border-radius: 4px;
+  }
+
+  .btn-not-delete {
+    color: $primary-color;
+    font-family: $font-second !important;
+    border: 1px solid $primary-color;
+    margin: 0px 18px 20px 18px !important;
+    padding: 8px 0px;
+    border-radius: 4px;
+  }
+
+  .css-l3ln04-MuiAutocomplete-root .MuiAutocomplete-tag {
+    background-color: #e1fcdc;
+  }
+}

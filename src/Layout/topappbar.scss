@@ -1,0 +1,13 @@
+.text-field{
+    background-color: #FFF2E8;
+    border-radius: 28px; 
+    width: 320px;
+    .css-1ua80n0-MuiInputBase-input-MuiOutlinedInput-input{
+        font-weight: bold;
+        color: #974D0F;
+        letter-spacing: 0.7px;
+    }
+}  
+.no-border .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border: none; 
+}

@@ -1,0 +1,941 @@
+@import "../themes.scss";
+
+.page-container {
+  .seach-web {
+    @include mobile-large {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    @include mobile-small {
+      display: none;
+    }
+
+    .text-field {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 6px;
+      font-family: $font-second !important;
+
+      .MuiAutocomplete-input {
+        font-family: $font-second;
+        font-family: $font-second !important;
+      }
+
+      .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+        border-color: #fff;
+        font-family: $font-second !important;
+        border-radius: 6px;
+      }
+
+      .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input {
+        border-radius: 6px !important;
+        font-family: $font-second !important;
+      }
+    }
+
+    .box-container {
+      display: flex;
+      align-items: center;
+      width: 300px;
+      border-radius: 10px;
+      background-color: #fff;
+
+      .text-field {
+        .MuiOutlinedInput-input {
+          color: black !important;
+        }
+
+        .MuiInputLabel-root {
+          color: black !important;
+        }
+
+        .css-1gywuxd-MuiInputBase-root-MuiOutlinedInput-root {
+          @include mobile-large {
+            width: 150px;
+          }
+        }
+
+        .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+          border-color: #fff;
+        }
+
+        :hover .MuiOutlinedInput-input {
+          color: #fff;
+        }
+
+        :hover .MuiInputLabel-root {
+          color: black;
+        }
+
+        :hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+          border-color: #fff;
+        }
+
+        .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input {
+          color: black;
+        }
+
+        .MuiInputLabel-root.Mui-focused {
+          color: black;
+        }
+
+        .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+          border-color: #fff;
+        }
+      }
+    }
+  }
+
+  .seach-mobile {
+    margin-top: 20px;
+    display: none;
+
+    @include mobile-large {
+      display: flex;
+    }
+
+    @include mobile {
+      display: flex;
+    }
+
+    @include mobile-small {
+      display: flex;
+    }
+
+    .box-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border-radius: 10px;
+      background-color: #fff;
+
+      .text-field {
+        .css-12tl3rr-MuiInputBase-input-MuiOutlinedInput-input {
+          font-family: $font-second !important;
+        }
+
+        .MuiOutlinedInput-input {
+          color: black !important;
+        }
+
+        .MuiInputLabel-root {
+          color: black !important;
+        }
+
+        .css-1gywuxd-MuiInputBase-root-MuiOutlinedInput-root {
+          @include mobile-large {
+            width: 150px;
+          }
+        }
+
+        .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+          border-color: #fff;
+        }
+
+        :hover .MuiOutlinedInput-input {
+          color: #fff;
+        }
+
+        :hover .MuiInputLabel-root {
+          color: black;
+        }
+
+        :hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+          border-color: #fff;
+        }
+
+        .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input {
+          color: black;
+        }
+
+        .MuiInputLabel-root.Mui-focused {
+          color: black;
+        }
+
+        .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+          border-color: #fff;
+        }
+      }
+    }
+  }
+
+  .slash {
+    width: 4px;
+    height: 45px;
+    background-color: $primary-color;
+
+    @include laptop {
+      height: 40px;
+    }
+
+    @include mobile-large {
+      height: 40px;
+      width: 2px;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+
+  .page-title {
+    font-weight: bold;
+    color: $primary-color;
+    font-family: $font-second;
+    font-size: $font-Size-title;
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include mobile-large {
+      font-size: 16px;
+    }
+  }
+
+  .page-title-en {
+    font-weight: bold;
+    color: $primary-color;
+    font-size: $font-Size-title;
+    font-family: $font-title !important;
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include mobile-large {
+      font-size: 16px;
+    }
+  }
+
+  .page-title-kh {
+    color: $primary-color;
+    font-size: $font-Size-title;
+    // font-weight: bold;
+    font-family: $font-thired !important;
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include mobile-large {
+      font-size: 16px;
+    }
+  }
+
+  .btn-create {
+    color: #fff;
+    border-radius: 10px;
+    font-family: $font-body;
+    font-size: $font-Size-subtitle;
+    background-color: $primary-color !important;
+  }
+
+  // =========================== NEW =====================
+
+  .header-text {
+    font-size: $font-Size-description;
+    font-family: $font-body;
+    color: $primary-color;
+    padding: 0px 0px 5px 5px;
+    margin-top: -5px;
+  }
+
+  .search-field {
+    width: 100%;
+    border-radius: 6px;
+    height: 40px !important;
+    background-color: #fff;
+    font-size: $font-Size-description;
+    font-family: $font-body !important;
+    justify-content: center !important;
+  }
+
+  // ============================ END =========================
+
+  .box-search {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile-large {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    @include mobile-small {
+      display: none;
+    }
+  }
+
+  .box-date {
+    display: flex;
+    align-items: center;
+    // width: 240px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  .box-exchange {
+    display: flex;
+    align-items: center;
+    // width: 250px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  .mover-icon {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include mobile-large {
+      display: block;
+    }
+
+    @include mobile {
+      display: block;
+    }
+
+    @include mobile-small {
+      display: block;
+    }
+
+    .box-move {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+
+      @include mobile-large {
+        display: block;
+      }
+
+      @include mobile {
+        display: block;
+      }
+
+      @include mobile-small {
+        display: block;
+      }
+    }
+  }
+
+  .filter-text-field {
+    .MuiOutlinedInput-input {
+      color: black !important;
+    }
+
+    .MuiInputLabel-root {
+      color: black !important;
+    }
+
+    .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+      border-color: #fff;
+    }
+
+    :hover .MuiOutlinedInput-input {
+      color: #fff;
+    }
+
+    :hover .MuiInputLabel-root {
+      color: black;
+    }
+
+    :hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+      border-color: #fff;
+    }
+
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input {
+      color: black;
+    }
+
+    .MuiInputLabel-root.Mui-focused {
+      color: black;
+    }
+
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: #fff;
+    }
+
+    .MuiAutocomplete-inputRoot .MuiAutocomplete-input {
+      width: 100% !important;
+    }
+  }
+
+  .container-textField {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    .text-field {
+      .MuiOutlinedInput-input {
+        color: black !important;
+      }
+
+      .MuiInputLabel-root {
+        color: black !important;
+      }
+
+      .css-1gywuxd-MuiInputBase-root-MuiOutlinedInput-root {
+        @include mobile-large {
+          width: 150px;
+        }
+      }
+
+      .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+        border-color: #fff;
+      }
+
+      :hover .MuiOutlinedInput-input {
+        color: #fff;
+      }
+
+      :hover .MuiInputLabel-root {
+        color: black;
+      }
+
+      :hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+        border-color: #fff;
+      }
+
+      .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input {
+        color: black;
+      }
+
+      .MuiInputLabel-root.Mui-focused {
+        color: black;
+      }
+
+      .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: #fff;
+      }
+
+      .css-1nv32ag-MuiButtonBase-root-MuiIconButton-root {
+        @include mobile-large {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .btn-create {
+    color: #fff;
+    padding: 8px 30px;
+    border-radius: 10px;
+    background-color: $primary-color !important;
+
+    .style-add-en {
+      color: #fff;
+      font-size: $font-Size-description;
+      font-weight: bold;
+      font-family: $font-title !important;
+      text-transform: uppercase !important;
+    }
+
+    .style-add-kh {
+      font-weight: bold;
+      text-transform: none;
+      color: $secondary-color;
+      font-size: $font-Size-subtitle;
+      font-family: $font-second !important;
+    }
+
+    .icon-add {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .att-status {
+    .slash {
+      width: 2.5px;
+      height: 28px;
+      background-color: $primary-color;
+    }
+
+    .Present {
+      color: #fff !important;
+      background-color: $primary-color !important;
+
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 8px !important;
+      // width: 120px !important;
+      text-align: center !important;
+      font-family: $font-title !important;
+      text-transform: uppercase !important;
+    }
+
+    .Good {
+      color: #fff !important;
+      background-color: $primary-color !important;
+
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 7px !important;
+      // width: 120px !important;
+      text-align: center !important;
+      font-family: $font-title !important;
+      text-transform: uppercase !important;
+    }
+
+    .Early {
+      color: #fff !important;
+      background-color: $primary-color !important;
+
+      font-size: 11px;
+      font-weight: bold;
+      // width: 120px !important;
+      padding: 4px 7px !important;
+      text-align: center !important;
+      font-family: $font-title !important;
+      text-transform: uppercase !important;
+    }
+
+    .None {
+      color: #fff !important;
+      background-color: gray !important;
+
+      font-size: 11px;
+      font-weight: bold;
+      // width: 120px !important;
+      padding: 4px 7px !important;
+      text-align: center !important;
+      font-family: $font-title !important;
+      text-transform: uppercase !important;
+    }
+
+    .Permission {
+      color: #fff !important;
+      background-color: blue !important;
+
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 7px !important;
+      // width: 120px !important;
+      text-align: center !important;
+      font-family: $font-title !important;
+      text-transform: uppercase !important;
+    }
+
+    .Late {
+      color: #fff !important;
+      background-color: red !important;
+
+      font-size: 11px;
+      font-weight: bold;
+      // width: 120px !important;
+      padding: 4px 7px !important;
+      text-align: center !important;
+      font-family: $font-title !important;
+      text-transform: uppercase !important;
+    }
+  }
+
+  .body-container {
+    margin-top: 20px;
+
+    @include mobile-small {
+      width: 310px !important;
+    }
+
+    @include mobile {
+      width: 370px !important;
+    }
+
+    @include mobile-large {
+      width: 476px !important;
+    }
+
+    .table {
+      width: 100%;
+      display: table;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-collapse: separate;
+      border-spacing: 0px 6px;
+
+      .table-row {
+        background-color: #fff;
+        padding: 10px 0px;
+
+        .header-title-start-en {
+          border-radius: 6px 0px 0px 6px;
+          padding: 10px 10px 10px 20px;
+          border: none;
+          font-family: $font-title;
+          font-size: $font-Size-subtitle;
+          color: $primary-color;
+          font-weight: bold;
+        }
+
+        .header-title-start-kh {
+          border-radius: 6px 0px 0px 6px;
+          padding: 10px 10px 10px 20px;
+          border: none;
+          font-family: $font-second;
+          font-size: $font-Size-subtitle;
+          color: $primary-color;
+          font-weight: bold;
+        }
+
+        .header-title-en {
+          padding: 10px 10px 10px 20px;
+          border: none;
+          font-family: $font-title;
+          font-size: $font-Size-subtitle;
+          color: $primary-color;
+          font-weight: bold;
+        }
+
+        .header-title-kh {
+          padding: 10px 10px 10px 20px;
+          border: none;
+          font-family: $font-second;
+          font-size: $font-Size-subtitle;
+          color: $primary-color;
+          font-weight: bold;
+        }
+
+        .header-title-end {
+          border-radius: 0px 6px 6px 0px;
+          padding: 10px 10px 10px 0px;
+          border: none;
+          font-family: $font-title;
+          font-size: $font-Size-subtitle;
+          color: $primary-color;
+        }
+      }
+
+      .body {
+        background-color: #fff;
+        box-shadow: none;
+
+        .body-row {
+          cursor: pointer;
+
+          .body-cell-start {
+            border: none;
+            font-size: $font-Size-description;
+            padding: 6px 6px 6px 20px;
+            border-radius: 6px 0px 0px 6px;
+          }
+
+          .body-cell {
+            border: none;
+            font-size: $font-Size-description;
+            padding: 6px 6px 6px 20px;
+            font-family: $font-body;
+            .Approved {
+              border: 1px solid #43a047;
+              color: #43a047;
+
+              width: 80px !important;
+              font-size: 11px !important;
+              padding: 3px 6px !important;
+              border-radius: 5px !important;
+              text-align: center !important;
+              text-transform: uppercase !important;
+            }
+
+            .Rejected {
+              border: 1px solid rgb(250, 41, 41);
+              color: rgb(250, 41, 41);
+
+              width: 80px !important;
+              font-size: 11px !important;
+              padding: 3px 6px !important;
+              border-radius: 5px !important;
+              text-align: center !important;
+              text-transform: uppercase !important;
+            }
+
+            .Canceled {
+              border: 1px solid rgb(250, 41, 41);
+              color: rgb(250, 41, 41);
+
+              width: 80px !important;
+              font-size: 11px !important;
+              padding: 3px 6px !important;
+              border-radius: 5px !important;
+              text-align: center !important;
+              text-transform: uppercase !important;
+            }
+
+            .HalfDay {
+              width: 80px;
+              color: white;
+              font-size: 11px;
+              padding: 4px 0px 2px 0px;
+              font-weight: bold;
+              text-align: center;
+              border-radius: 5px;
+              text-transform: uppercase;
+              background-color: #6c6c6c;
+            }
+
+            .AllDay {
+              width: 80px;
+              color: white;
+              font-size: 11px;
+              padding: 4px 0px 2px 0px;
+              font-weight: bold;
+              text-align: center;
+              border-radius: 5px;
+              text-transform: uppercase;
+              background-color: #117d00;
+            }
+
+            .Shift {
+              color: #147bc9;
+              font-size: 11px;
+              padding: 4px 6px 2px 6px;
+              font-weight: bold;
+              text-align: center;
+              border-radius: 5px;
+              text-transform: uppercase;
+              border: 1px solid #147bc9;
+            }
+
+            .body-name {
+              font-size: $font-Size-description;
+              font-family: Khmer OS Siemreap;
+            }
+
+            .btn-resign {
+              background-color: rgb(248, 218, 218);
+              text-transform: none;
+              color: rgb(250, 41, 41);
+              padding: 4px 10px !important;
+              border-radius: 6px;
+            }
+
+            .btn-suspend {
+              background-color: rgb(250, 245, 239);
+              text-transform: none;
+              color: orange;
+              padding: 4px 10px !important;
+              border-radius: 6px;
+            }
+
+            .Resign {
+              background-color: #ffe9e9;
+              color: rgb(250, 41, 41);
+
+              width: 80px !important;
+              font-size: 11px !important;
+              border-radius: 5px !important;
+              text-align: center !important;
+              padding: 6px 6px 5px 6px !important;
+              text-transform: uppercase !important;
+            }
+
+            .Suspend {
+              background-color: #fff8e8;
+              color: orange;
+
+              width: 80px !important;
+              font-size: 11px !important;
+              padding: 6px 6px 5px 6px !important;
+              border-radius: 5px !important;
+              text-align: center !important;
+              text-transform: uppercase !important;
+            }
+
+            .Working {
+              background-color: #e7f3e6;
+              color: green;
+
+              width: 80px !important;
+              font-size: 11px !important;
+              padding: 6px 6px 5px 6px !important;
+              border-radius: 5px !important;
+              text-align: center !important;
+              text-transform: uppercase !important;
+            }
+
+            .status-attendance {
+              color: white;
+              font-size: 8px;
+              font-weight: bold;
+              text-transform: uppercase;
+              margin-left: 8px;
+              height: 18px;
+              padding-top: 2px;
+            }
+
+            .field-label-shift {
+              font-family: $font-body;
+              font-size: $font-Size-description;
+            }
+
+            .field-permission {
+              color: #fff;
+              font-family: $font-body;
+              font-size: 11px;
+              height: 20px;
+              background-color: #43a047;
+            }
+
+            .no-hover:hover {
+              background-color: inherit !important;
+              /* Add any other styles you want to override during hover */
+            }
+
+            .attendance-text {
+              font-size: 11px;
+              border-radius: 10px;
+              padding: 3px 5px 2px 5px;
+              height: 16px;
+              color: #fff !important;
+            }
+
+            .field-presence {
+              color: #fff;
+              font-family: $font-body;
+              font-size: 11px;
+              height: 20px;
+              background-color: #0091ea;
+            }
+
+            .field-absence {
+              color: #fff;
+              font-family: $font-body;
+              font-size: 11px;
+              height: 20px;
+              background-color: #d50000;
+            }
+
+            .field-late {
+              color: #fff;
+              font-family: $font-body;
+              font-size: 11px;
+              height: 20px;
+              background-color: #f4511e;
+            }
+          }
+
+          .body-cell-end {
+            border: none;
+            font-size: $font-Size-description;
+            padding: 6px 20px 6px 0px;
+            border-radius: 0px 6px 6px 0px;
+          }
+        }
+
+        .body-row:hover {
+          background-color: #e6eff8;
+          transition: all 0.1s linear;
+        }
+      }
+    }
+
+    .interview-card {
+      width: 100%;
+      padding: 25px;
+      border-radius: 10px;
+      background-color: #fff;
+
+      .card-name {
+        font-weight: bold !important;
+        font-size: 14px;
+      }
+
+      .card-position {
+        font-size: 15.5px;
+      }
+
+      .card-profile {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .card-detail {
+        font-size: 15px;
+        color: #6c6c6c;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      .card-title-en {
+        font-weight: bold;
+        font-size: 14px;
+        color: #545454;
+        font-family: $font-title;
+      }
+
+      .card-title-kh {
+        font-weight: bold;
+        font-size: 15px;
+        color: #545454;
+        font-family: $font-second;
+      }
+    }
+
+    .text-title-top {
+      font-size: 16px;
+      font-family: $font-thired;
+    }
+  }
+
+  .late-container {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: white;
+
+    .late-update-container {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background-color: $primary-color !important;
+
+      .late-update-icon {
+        background-color: $primary-color !important;
+        color: #fff;
+        margin-bottom: 2px;
+        font-size: 14px !important;
+      }
+    }
+
+    .header-title-start-en {
+      // border-radius: 6px 0px 0px 6px;
+      // padding: 10px 10px 10px 20px;
+      border: none;
+      font-family: $font-title;
+      font-size: $font-Size-subtitle;
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    .header-title-start-kh {
+      // border-radius: 6px 0px 0px 6px;
+      // padding: 10px 10px 10px 20px;
+      border: none;
+      font-family: $font-second;
+      font-size: $font-Size-subtitle;
+      color: $primary-color;
+      font-weight: bold;
+    }
+  }
+}

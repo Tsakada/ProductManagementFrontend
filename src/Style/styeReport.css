@@ -1,0 +1,235 @@
+/* ====================== Style report ============================== */
+/* th {
+        font-weight: normal;
+    } */
+
+.page-container-report-main {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.page-report-logo-size {
+    width: 40px;
+}
+
+.page-header-report-title-main {
+    font-weight: bold;
+    margin-top: 15px;
+    text-transform: uppercase;
+    color: #1d4592;
+}
+
+
+div.page-footer-main {
+    text-align: center;
+    height: 50px;
+    font-size: 10px;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+div.page-footer-main p {
+    margin: 0;
+}
+
+.watermark {
+    display: none;
+    top: 50vh;
+    z-index: -9;
+    width: 50vw;
+    page-break-after: always;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .1;
+}
+
+table.report-container-main {
+    page-break-after: always;
+    width: 100% !important;
+    border-spacing: 0px !important;
+}
+
+table.report-container-main th {
+    border: 0.2px solid #000 !important;
+    text-align: center;
+    /* color: red; */
+}
+table.report-container-main td {
+    border: 0.2px solid #000 !important;
+    text-align: center;
+}
+
+thead.report-header-main {
+    display: table-header-group;
+}
+
+tfoot.report-footer-main {
+    display: table-footer-group;
+}
+
+tbody.report-content-main {
+    width: 100% !important;
+}
+
+div.footer-info-main,
+div.page-footer-main {
+    display: none;
+    height: 40px;
+}
+
+.page-footer-line-main {
+    border: 1px solid rgba(0, 0, 0, 0.338);
+    margin-bottom: 7px;
+}
+
+div.page-footer-text-main {
+    text-align: center;
+    color: black;
+    font-family: "Khmer OS Siemreap";
+}
+
+/* ========== style head table ========== */
+/* .header-title-report-main {
+    text-align: center;
+    font-size: 12px !important;
+    font-weight: bold;
+    padding: 4px;
+    border: 0.2px solid #000 !important;
+    font-family: "Century Gothic";
+} */
+
+
+/* .report-title-cell-center-bold-main {
+    font-size: 12px !important;
+    text-align: center;
+    font-family: "Century Gothic";
+    color: white;
+    text-transform: capitalize !important;
+    font-weight: bold;
+    padding: 4px 6px;
+    border: 0.2px solid #000 !important;
+    background-color: #177A02;
+} */
+
+/* =========== style body table ============ */
+
+/* .report-content-cell-center-main {
+    font-family: "SiemReap";
+    font-size: 11px !important;
+    text-align: center;
+    padding: 4px 6px;
+    border: 0.2px solid #000 !important;
+}
+
+.report-content-cell-center-bold-main {
+    font-size: 15px !important;
+    text-align: center;
+    font-weight: bold;
+    padding: 4px 6px;
+    border: 0.2px solid #000 !important;
+} */
+
+/* .report-content-cell-left-bold-main {
+    font-size: 15px !important;
+    font-weight: bold;
+    padding: 4px 6px;
+    border: 0.2px solid #000 !important;
+}
+
+.report-content-cell-left-bold-bg-main {
+    font-size: 15px !important;
+    font-weight: bold;
+    padding: 4px 6px;
+    border: 0.2px solid #000 !important;
+    background-color: #1d4592;
+    color: white;
+} */
+
+/* .report-content-cell-left-main {
+    font-family: "SiemReap";
+    font-size: 11px !important;
+    padding: 4px 6px;
+    border: 0.2px solid #000 !important;
+} */
+
+.report-content-cell-left-main-update {
+    font-size: 11px !important;
+    /* padding: 8px 8px; */
+    border: 0.2px solid #000 !important;
+    /* height: 100%; */
+    /* background-color: green; */
+    /* padding: 0px !important;
+    margin: 0px !important; */
+    padding: 0px;
+    height: 100%;
+}
+
+/* .report-content-cell-left-main-update :hover {
+        font-size: 11px !important;                     
+        padding: 6px 8px; 
+        background-color: red !important;
+        color: white !important;
+    } */
+
+.stack-row {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    background-color: #1d4592;
+}
+
+
+.report-content-cell-left-bg-main {
+    font-size: 15px !important;
+    text-align: right;
+    padding: 4px 30px;
+    border: 0.2px solid #000 !important;
+    color: black;
+    font-weight: bold;
+    /* background-color: #1d4592;  */
+}
+
+.report-content-cell-right-main {
+    font-size: 15px !important;
+    text-align: right;
+    padding: 4px 6px;
+    border: 0.2px solid #000 !important;
+}
+
+.report-content-cell-right-bg-main {
+    font-size: 15px !important;
+    text-align: right;
+    font-weight: bold;
+    padding: 4px 6px;
+    border: 0.2px solid #000 !important;
+    color: white;
+    background-color: #1d4592;
+}
+
+
+
+@media print {
+    @page {
+        /* size: A4; */
+        margin: 0mm 3mm 2mm 3mm;
+        background-color: #0f80c2;
+    }
+
+    .watermark {
+        display: block;
+        counter-increment: page;
+        position: fixed;
+    }
+
+    div.page-footer-main,
+    div.footer-info-main {
+        display: block;
+    }
+
+}
+
+/* ====================== End Style report ============================== */

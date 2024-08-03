@@ -1,0 +1,28 @@
+@import "../../themes.scss";
+
+.empty-container {
+  padding: 100px 0px;
+  width: 100%;
+
+  .empty-image {
+    opacity: 0.8;
+    width: 90px;
+    max-height: 90px;
+  }
+
+  .text-title {
+    margin-top: 10px;
+    font-family: $font-second;
+    font-size: $font-Size-subtitle;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(182, 181, 181);
+  }
+
+  .text-des {
+    font-family: $font-second;
+    font-size: $font-Size-description;
+    text-align: center !important;
+    color: rgb(182, 181, 181);
+  }
+}
