@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
 
-export default function MediaCard({ item }) {
+export default function ProductCard({ item }) {
     console.log(item);
     return (
         <Card>

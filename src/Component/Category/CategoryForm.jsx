@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { useFormik, Form, FormikProvider } from "formik";
 import * as Yup from "yup";
 import {
-  Box,
   Grid,
   Stack,
   Button,
@@ -15,20 +14,15 @@ import {
   DialogContent,
   DialogActions,
   DialogContentText,
-  Select,
-  MenuItem,
-  FormControl,
 } from "@mui/material";
 import { useMutation } from "@apollo/client";
 import DoDisturbOnOutlinedIcon from "@mui/icons-material/DoDisturbOnOutlined";
 import { AuthContext } from "../../context/AuthContext";
 import { translateLauguage } from "../../Function/Translate";
-import { CREATE_AFFAIR, UPDATE_AFFAIR } from "../../Schema/Affair";
 import "../../Style/dialogstyle.scss";
-import { CREATE_PRODUCT, UPDATE_PRODUCT } from "../../Schema/Product";
-import ImageUpload from "../ImageUpload/ImageUpload";
+import { CREATE_CATEGORY, UPDATE_CATEGORY } from "../../Schema/Category";
 
-export default function ProductForm({
+export default function CategoryForm({
   open,
   editData,
   setRefetch,
@@ -37,21 +31,19 @@ export default function ProductForm({
 }) {
   const { language, setAlert } = useContext(AuthContext);
   const { t } = translateLauguage(language);
-  const [url, setUrl] = useState("");
-  const [typeCash, setTypeCash] = useState("USD");
   const [loading, setLoading] = useState(false);
   //create
-  const [createProduct] = useMutation(CREATE_PRODUCT, {
-    onCompleted: ({ createProduct }) => {
-      console.log("createProduct===>", createProduct)
+  const [createCategory] = useMutation(CREATE_CATEGORY, {
+    onCompleted: ({ createCategory }) => {
+      console.log("createCategory===>", createCategory)
       setLoading(false);
-      if (createProduct?.status === true) {
+      if (createCategory?.status === true) {
         setRefetch();
         handleClose();
         resetForm();
-        setAlert(true, "success", createProduct?.message);
+        setAlert(true, "success", createCategory?.message);
       } else {
-        setAlert(true, "error", createProduct?.message);
+        setAlert(true, "error", createCategory?.message);
       }
     },
     onError: (error) => {
@@ -61,56 +53,52 @@ export default function ProductForm({
   });
 
   //update
-  const [updateProduct] = useMutation(UPDATE_PRODUCT, {
-    onCompleted: ({ updateProduct }) => {
+  const [updateCategory] = useMutation(UPDATE_CATEGORY, {
+    onCompleted: ({ updateCategory }) => {
+
       setLoading(false);
-      if (updateProduct?.status === true) {
-        setAlert(true, "success", updateProduct?.message);
+      if (updateCategory?.status === true) {
+        setAlert(true, "success", updateCategory?.message);
         setRefetch();
         handleClose();
       } else {
-        setAlert(true, "error", updateProduct?.message);
+        setAlert(true, "error", updateCategory?.message);
       }
     },
     onError: (error) => {
+      console.log(error.message);
       setLoading(false);
     },
   });
 
   // formik user
   const CheckValidation = Yup.object().shape({
-    price: Yup.string().required(t("required")),
-    product_name: Yup.string().required(t("required")),
+    remark: Yup.string(),
+    category_name: Yup.string().required(t("required")),
   });
 
   const formik = useFormik({
     initialValues: {
-      price: "",
-      product_name: "",
+      remark: "",
+      category_name: "",
     },
     validationSchema: CheckValidation,
     onSubmit: (values) => {
       setLoading(true);
       if (dialogTitle === "Create") {
-        createProduct({
+        createCategory({
           variables: {
             input: {
               ...values,
-              price: parseFloat(values.price),
-              image: url,
-              type_cash: typeCash
             },
           },
         });
       } else {
-        updateProduct({
+        updateCategory({
           variables: {
-            id: editData?._id,
+            updateCategoryId: editData?._id,
             input: {
               ...values,
-              price: parseFloat(values.price),
-              image: url,
-              type_cash: typeCash
             },
           },
         });
@@ -133,11 +121,10 @@ export default function ProductForm({
 
   useEffect(() => {
     if (editData) {
-      setFieldValue("price", editData?.price ?? "");
-      setFieldValue("product_name", editData?.product_name ?? "");
+      setFieldValue("remark", editData?.remark ?? "");
+      setFieldValue("category_name", editData?.category_name ?? "");
     }
   }, [editData, open]);
-  console.log("url==>", url)
   return (
     <Dialog open={open} className="dialog-container" fullWidth maxWidth="sm">
       <DialogTitle>
@@ -151,7 +138,7 @@ export default function ProductForm({
               language === "en" ? "dialog-title-en" : "dialog-title-kh"
             }
           >
-            {dialogTitle === "Create" ? "បង្កើតផលិតផល" : "កែប្រែផលិតផល"}
+            {dialogTitle === "Create" ? "បង្កើតប្រភេទ" : "កែប្រែប្រភេទ"}
           </Typography>
           <IconButton onClick={handleClose}>
             <DoDisturbOnOutlinedIcon className="close-icon" />
@@ -165,59 +152,44 @@ export default function ProductForm({
           <FormikProvider value={formik}>
             <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
               <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <ImageUpload url={url} setUrl={setUrl} open={open} />
-                </Grid>
+
                 <Grid item xs={12}>
                   <Typography
                     className={
                       language === "en" ? "field-title-en" : "field-title-kh"
                     }
                   >
-                    ឈ្មោះផលិតផល
+                    ឈ្មោះប្រភេទ
                   </Typography>
                   <TextField
                     fullWidth
                     size="small"
-                    {...getFieldProps("product_name")}
-                    helperText={touched.product_name && errors.product_name}
-                    error={Boolean(touched.product_name && errors.product_name)}
+                    {...getFieldProps("category_name")}
+                    helperText={touched.category_name && errors.category_name}
+                    error={Boolean(touched.category_name && errors.category_name)}
                   />
                 </Grid>
 
-                <Grid item xs={9}>
+                <Grid item xs={12}>
                   <Typography
                     className={
                       language === "en" ? "field-title-en" : "field-title-kh"
                     }
                   >
-                    តម្លៃ
+                    ចំណាំ
                   </Typography>
                   <TextField
-                    size="small" type="number"
+                    rows={2}
+                    multiline
                     fullWidth
-                    InputProps={{ endAdornment: typeCash === "USD" ? "$" : "៛" }}
-                    {...getFieldProps("price")}
-                    error={Boolean(touched.price && errors.price)}
-                    helperText={touched.price && errors.price}
+                    size="small"
+                    type="number"
+                    {...getFieldProps("remark")}
+                    error={Boolean(touched.remark && errors.remark)}
+                    helperText={touched.remark && errors.remark}
                   />
                 </Grid>
-                <Grid item xs={3}>
-                  <Typography className={language === "en" ? "field-title-en" : "field-title-kh"
-                  }
-                  >
-                    ប្រភេទ
-                  </Typography>
-                  <FormControl fullWidth size="small">
-                    <Select
-                      value={typeCash}
-                      onChange={({ target }) => setTypeCash(target?.value)}
-                    >
-                      <MenuItem value={"USD"}>USD</MenuItem>
-                      <MenuItem value={"KHR"}>KHR</MenuItem>
-                    </Select>
-                  </FormControl>
-                </Grid>
+
               </Grid>
             </Form>
           </FormikProvider>

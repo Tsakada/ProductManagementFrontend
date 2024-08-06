@@ -10,6 +10,7 @@ import Login from "./Pages/Authentication/Login/Login";
 import Product from "./Pages/Product/Product";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Setting from "./Pages/Setting/Setting";
+import Category from "./Pages/Category/Category";
 
 export default function Router() {
   const { setAlert, state, dispatch } = useContext(AuthContext);
@@ -28,12 +29,10 @@ export default function Router() {
         { path: "/", element: <Navigate to="/dashboard" /> },
         { path: "/user", element: <User /> },
         { path: "/setting", element: <Setting /> },
-        { path: "/dashboard", element: <Dashboard /> },
-        // { path: "/product", element: <Product /> },
         { path: "/setting/user", element: <User /> },
-        { path: "/setting/category", element: <Product /> },
+        { path: "/dashboard", element: <Dashboard /> },
         { path: "/setting/product", element: <Product /> },
-        { path: "/setting/affair", element: <Affair /> },
+        { path: "/setting/category", element: <Category /> },
         { path: "*", element: <Page404 /> },
       ],
     },

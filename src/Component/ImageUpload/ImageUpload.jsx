@@ -1,6 +1,6 @@
 // src/components/ImageUpload.js
 import React, { useEffect, useState } from "react";
-import { storage } from "../Auth/firebase";
+import { storage } from "../../Auth/firebase";
 import {
   ref,
   deleteObject,
@@ -10,13 +10,13 @@ import {
 
 import {
   Box,
-  Button,
   Card,
-  CardMedia,
-  LinearProgress,
   Stack,
+  Button,
   TextField,
+  CardMedia,
   Typography,
+  LinearProgress,
 } from "@mui/material";
 
 const ImageUpload = ({ url, setUrl, open }) => {
