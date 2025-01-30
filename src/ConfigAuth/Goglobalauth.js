@@ -1,3 +1,5 @@
+
+
 import axios from 'axios';
 
 class Goglobalauth {
@@ -171,7 +173,7 @@ class Goglobalauth {
         const data = await axios({
             method: 'get',
             url: this.url + "/users",
-        }); 
+        });
     }
     async verifyToken(token) {
         // 
@@ -259,7 +261,7 @@ class Goglobalauth {
                 method: 'post',
                 url: this.url + "/auth/logout",
             })
- 
+
             return {
                 message: "Success!",
                 status: true,

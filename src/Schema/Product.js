@@ -10,13 +10,18 @@ export const CREATE_AFFAIR = gql`
 `;
 
 export const GET_PRODUCT = gql`
-  query GetProduct {
+    query GetProduct {
     getProduct {
       _id
       product_name
       image
       price
       type_cash
+      description
+      category_id {
+        category_name
+        _id
+      }
     }
   }
 `;

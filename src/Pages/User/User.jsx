@@ -1,66 +1,51 @@
 // Dependency
 import {
   Box,
-  Grid,
   Stack,
   Table,
-  Avatar,
+  Button,
   TableRow,
   TableCell,
   TableBody,
-  TextField, Button,
   TableHead,
   Typography,
   TableContainer,
-  InputAdornment,
+  Card,
+  CardMedia,
 } from "@mui/material";
-import React, { useState, useEffect, useContext } from "react";
 import { useQuery } from "@apollo/client";
-
-// Icons
-import SearchIcon from "@mui/icons-material/Search";
-
-// Style
+import { useNavigate } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
+// Component
 import "../../Style/pagestyle.scss";
-
-// src
+import { GET_PRODUCT } from "../../Schema/Product";
 import { AuthContext } from "../../context/AuthContext";
-import UserAction from "../../Component/User/UserAction";
 import EmptyData from "../../Component/Include/EmptyData";
 import { translateLauguage } from "../../Function/Translate";
 import LoadingPage from "../../Component/Include/LoadingPage";
-import FooterPagination from "../../Component/Include/FooterPagination";
+import ProductForm from "../../Component/Product/ProductForm";
+import ProductAction from "../../Component/Product/ProductAction";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-// Schema
-import { GET_USER_PAGINATION } from "../../Schema/User";
-import { useNavigate } from "react-router-dom";
 
 export default function User() {
   const { language } = useContext(AuthContext);
   const { t } = translateLauguage(language);
   const navigate = useNavigate();
+
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
-
-  // get user
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [tableData, setTableData] = useState([]);
-  const [paginationData, setPaginationData] = useState();
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(10);
   const [keyword, setKeyword] = useState("");
+  const [isUse, setIsUse] = useState("All");
 
   // Query
-  const { refetch } = useQuery(GET_USER_PAGINATION, {
-    variables: {
-      page: page,
-      limit: limit,
-      keyword: keyword,
-      pagination: true,
-    },
-    onCompleted: ({ getAdminByCompanyPagination }) => {
-      setTableData(getAdminByCompanyPagination?.data);
-      setPaginationData(getAdminByCompanyPagination?.paginator);
+  const { refetch } = useQuery(GET_PRODUCT, {
+    onCompleted: ({ getProduct }) => {
+      console.log("getProduct :", getProduct)
       setLoading(false);
+      if (getProduct) setTableData(getProduct);
     },
     onError: (error) => {
       setLoading(true);
@@ -70,13 +55,8 @@ export default function User() {
 
   useEffect(() => {
     refetch();
-  }, [page, limit, keyword]);
-
-  const handleLimit = (e) => {
-    setLimit(e.target.value);
-    setPage(1);
-  };
-
+  }, [keyword]);
+  console.log("tableData==>", tableData)
   // ======================= Resize width Screen ======================
   const [width, setWidth] = useState(window.innerWidth);
   const updateDimensions = () => {
@@ -86,7 +66,7 @@ export default function User() {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
-  console.log("tableData==>", tableData);
+
   return (
     <div className="page-container">
       <Stack direction="row" spacing={2} justifyContent="space-between">
@@ -108,13 +88,13 @@ export default function User() {
             <Typography
               className={language === "en" ? "page-title-en" : "page-title-kh"}
             >
-              អ្នកប្រើប្រាស់
+              ផលិតផល
             </Typography>
           </Stack>
         </Stack>
         <Button
           className="btn-create"
-          // onClick={handleOpen}
+          onClick={handleOpen}
           endIcon={<AddCircleOutlineIcon className="icon-add" />}
         >
           <Typography
@@ -125,61 +105,14 @@ export default function User() {
             {t(`create`)}
           </Typography>
         </Button>
-        {/* <ProductForm
+        <ProductForm
           open={open}
           setRefetch={refetch}
           dialogTitle="Create"
           handleClose={handleClose}
-        /> */}
+        />
       </Stack>
 
-      <Box sx={{ marginTop: "20px" }}>
-        <Grid container spacing={1.5}>
-          <Grid item xs={6} sm={4} md={4} lg={2.4} xl={2.4}>
-            {/* <Typography className="header-text">{t("thead_search")}</Typography> */}
-            <TextField
-              className="search-field"
-              fullWidth
-              placeholder={t(`search`)}
-              size="small"
-              onChange={(e) => setKeyword(e.target.value)}
-              InputProps={{
-                style: { fontFamily: "Khmer OS Siemreap" },
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon />
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </Grid>
-
-          {/* <Grid item xs={6} sm={8} md={8} lg={9.6} xl={9.6}>
-            <Stack
-              height="100%"
-              direction="row"
-              alignItems="flex-end"
-              justifyContent="flex-end"
-            >
-              <Button
-                className="btn-create"
-                onClick={handleOpen}
-                endIcon={<AddCircleOutlineIcon className="icon-add" />}
-              >
-                <Typography className={language === "en" ? "style-add-en" : "style-add-kh"}>
-                  {t(`create`)}
-                </Typography>
-              </Button>
-            </Stack>
-            <UserForm
-              dialogTitle="Create"
-              handleClose={handleClose}
-              open={open}
-              setRefetch={refetch}
-            />
-          </Grid> */}
-        </Grid>
-      </Box>
 
       <Box className="body-container">
         <TableContainer sx={{ maxWidth: `${width}px`, whiteSpace: "nowrap" }}>
@@ -200,26 +133,24 @@ export default function User() {
                   className={
                     language === "en" ? "header-title-en" : "header-title-kh"
                   }
-                  width="20%"
                 >
-                  {t(`thead_full_name`)}
+                  ផលិតផល
                 </TableCell>
                 <TableCell
                   className={
                     language === "en" ? "header-title-en" : "header-title-kh"
                   }
-                  width="33%"
                 >
-                  {t(`thead_email`)}
+                  ប្រភេទ
                 </TableCell>
                 <TableCell
                   className={
                     language === "en" ? "header-title-en" : "header-title-kh"
                   }
-                  width="40%"
                 >
-                  {t(`thead_tel`)}
+                  តម្លៃ
                 </TableCell>
+
                 <TableCell
                   className="header-title-end"
                   width="10%"
@@ -238,23 +169,28 @@ export default function User() {
                   return (
                     <TableRow className="body-row" key={index}>
                       <TableCell className="body-cell">
-                        {index + paginationData?.slNo}
+                        {index}
                       </TableCell>
+
                       <TableCell className="body-cell">
-                        <Stack direction="row" spacing={1}>
-                          <Avatar
-                            src={`${row?.imageSrc}`}
-                            sx={{ width: "42px", height: "42px" }}
-                          />
-                          <Stack direction="column" justifyContent="center">
-                            {row?.username}
-                          </Stack>
+                        <Stack direction="row" alignItems="center" spacing={2}>
+
+                          <Card sx={{ width: 90 }}>
+                            <CardMedia
+                              component="img"
+                              alt="green iguana"
+                              height="90"
+                              image={row?.image}
+                            />
+                          </Card>
+
+                          <Typography> {row?.product_name} </Typography>
                         </Stack>
                       </TableCell>
-                      <TableCell className="body-cell">{row?.email}</TableCell>
-                      <TableCell className="body-cell">{row?.tell}</TableCell>
+                      <TableCell className="body-cell">{row?.category_id?.category_name}</TableCell>
+                      <TableCell className="body-cell">{row?.price} {row?.type_cash === "USD" ? "$" : "៛"}</TableCell>
                       <TableCell className="body-cell-end" align="right">
-                        <UserAction
+                        <ProductAction
                           dialogTitle="Create"
                           editData={row}
                           setRefetch={refetch}
@@ -268,14 +204,14 @@ export default function User() {
           </Table>
         </TableContainer>
         {/* ==================================== Pagination ====================== */}
-        <FooterPagination
+        {/* <FooterPagination
           totalPages={paginationData?.totalPages}
           totalDocs={paginationData?.totalDocs}
           limit={limit}
           page={page}
           setPage={setPage}
           handleLimit={handleLimit}
-        />
+        /> */}
       </Box>
     </div>
   );

@@ -23,20 +23,16 @@ import { useQuery } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 // Component
+import "../../Style/pagestyle.scss";
+import SearchIcon from "@mui/icons-material/Search";
+import { GET_PRODUCT } from "../../Schema/Product";
 import { AuthContext } from "../../context/AuthContext";
 import EmptyData from "../../Component/Include/EmptyData";
 import { translateLauguage } from "../../Function/Translate";
 import LoadingPage from "../../Component/Include/LoadingPage";
-// Icon
-import SearchIcon from "@mui/icons-material/Search";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-// Style
-import "../../Style/pagestyle.scss";
-
-// Schema
-import { GET_PRODUCT } from "../../Schema/Product";
-import ProductAction from "../../Component/Product/ProductAction";
 import ProductForm from "../../Component/Product/ProductForm";
+import ProductAction from "../../Component/Product/ProductAction";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 export default function Product() {
   const { language } = useContext(AuthContext);
@@ -54,6 +50,7 @@ export default function Product() {
   // Query
   const { refetch } = useQuery(GET_PRODUCT, {
     onCompleted: ({ getProduct }) => {
+      console.log("getProduct :", getProduct)
       setLoading(false);
       if (getProduct) setTableData(getProduct);
     },
@@ -144,13 +141,14 @@ export default function Product() {
                     language === "en" ? "header-title-en" : "header-title-kh"
                   }
                 >
+                  ផលិតផល
                 </TableCell>
                 <TableCell
                   className={
                     language === "en" ? "header-title-en" : "header-title-kh"
                   }
                 >
-                  ផលិតផល
+                  ប្រភេទ
                 </TableCell>
                 <TableCell
                   className={
@@ -182,16 +180,21 @@ export default function Product() {
                       </TableCell>
 
                       <TableCell className="body-cell">
-                        <Card sx={{ maxWidth: 100 }}>
-                          <CardMedia
-                            component="img"
-                            alt="green iguana"
-                            height="100"
-                            image={row?.image}
-                          />
-                        </Card>
+                        <Stack direction="row" alignItems="center" spacing={2}>
+
+                          <Card sx={{ width: 90 }}>
+                            <CardMedia
+                              component="img"
+                              alt="green iguana"
+                              height="90"
+                              image={row?.image}
+                            />
+                          </Card>
+
+                          <Typography> {row?.product_name} </Typography>
+                        </Stack>
                       </TableCell>
-                      <TableCell className="body-cell">{row?.product_name}</TableCell>
+                      <TableCell className="body-cell">{row?.category_id?.category_name}</TableCell>
                       <TableCell className="body-cell">{row?.price} {row?.type_cash === "USD" ? "$" : "៛"}</TableCell>
                       <TableCell className="body-cell-end" align="right">
                         <ProductAction

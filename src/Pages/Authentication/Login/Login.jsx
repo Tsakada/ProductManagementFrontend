@@ -25,6 +25,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import HttpsOutlinedIcon from "@mui/icons-material/HttpsOutlined";
+import "./login.scss"
 export default function Login() {
   const navigate = useNavigate();
 
@@ -92,11 +93,11 @@ export default function Login() {
   const { errors, touched, handleSubmit, getFieldProps } = formik;
 
   return (
-    <div>
+    <div  >
       <FormikProvider value={formik}>
         <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-          <Box className="forgotpassword-page">
-            <Box className="container">
+          <Stack className="login-page" direction="row" alignItems="center" justifyContent="center">
+            <Box className="container"  >
               <Stack spacing={3} direction="column">
                 <Stack
                   spacing={2}
@@ -104,12 +105,7 @@ export default function Login() {
                   alignItems="center"
                   justifyContent="center"
                 >
-                  <Avatar
-                    sx={{ width: 110, height: 110 }}
-                    variant="square"
-                    alt="logo"
-                    src={logiImage}
-                  />
+
                   <Stack
                     width={"80%"}
                     spacing={1}
@@ -118,7 +114,7 @@ export default function Login() {
                     justifyContent="center"
                   >
                     <Typography className="title" variant="h6" align="center">
-                      Welcome to Employee Record
+                      LOGIN
                     </Typography>
                     <Typography className="sub-title">
                       Enter your email and password to access your account
@@ -126,11 +122,10 @@ export default function Login() {
                   </Stack>
                 </Stack>
                 <Stack direction="column" spacing={5}>
-                  <Stack direction="column" spacing={1.5}>
+                  <Stack direction="column" spacing={2}>
                     <Stack>
-                      <Typography>Email</Typography>
+                      <Typography className="text-field-title" >Email</Typography>
                       <TextField
-                        className="text-field"
                         size="small"
                         fullWidth
                         placeholder="example@gmail.com"
@@ -147,9 +142,8 @@ export default function Login() {
                       />
                     </Stack>
                     <Stack>
-                      <Typography> Password</Typography>
+                      <Typography className="text-field-title">  Password</Typography>
                       <TextField
-                        className="text-field"
                         size="small"
                         fullWidth
                         type={show ? "text" : "password"}
@@ -177,22 +171,6 @@ export default function Login() {
                           ),
                         }}
                       />
-                      <Typography
-                        align="center"
-                        variant="body2"
-                        className="sub-title"
-                        sx={{
-                          marginTop: "3px",
-                          cursor: "pointer",
-                          alignSelf: "flex-end",
-                          ":hover": {
-                            color: "blue",
-                          },
-                        }}
-                        onClick={() => navigate("/forgotpassword")}
-                      >
-                        Forgot password?
-                      </Typography>
                     </Stack>
                   </Stack>
                   <Button
@@ -200,8 +178,8 @@ export default function Login() {
                     variant="contained"
                     type="submit"
                     sx={{
-                      backgroundColor: "#0023DB",
-                      ":hover": { backgroundColor: "#0023DB", color: "white" },
+                      backgroundColor: "#0f81c2",
+                      ":hover": { backgroundColor: "#0f81c2", color: "white" },
                     }}
                   >
                     {loading ? "loading..." : "Login"}
@@ -209,14 +187,8 @@ export default function Login() {
                 </Stack>
               </Stack>
             </Box>
-            <Typography
-              variant="body2"
-              align="center"
-              sx={{ mb: 3, letterSpacing: "2px" }}
-            >
-              &#169;Copyright 2022, Employee Record
-            </Typography>
-          </Box>
+
+          </Stack>
         </Form>
       </FormikProvider>
     </div>

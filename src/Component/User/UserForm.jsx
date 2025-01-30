@@ -56,9 +56,9 @@ LinearProgressWithLabel.propTypes = {
 
 export default function UserForm({
   open,
+  editData,
   setRefetch,
   handleClose,
-  editData,
   dialogTitle,
 }) {
   const { language, setAlert } = useContext(AuthContext);
@@ -126,10 +126,7 @@ export default function UserForm({
         setRefetch();
         handleClose();
         setAlert(true, "success", updateUser?.message);
-        window.localStorage.setItem(
-          "userLogin",
-          JSON.stringify(updateUser?.data)
-        );
+        window.localStorage.setItem("userLogin", JSON.stringify(updateUser?.data));
         // window.location.reload();
         // dispatch({
         //   type: "LOGGED_IN_USER",

@@ -27,6 +27,7 @@ import { CREATE_AFFAIR, UPDATE_AFFAIR } from "../../Schema/Affair";
 import "../../Style/dialogstyle.scss";
 import { CREATE_PRODUCT, UPDATE_PRODUCT } from "../../Schema/Product";
 import ImageUpload from "../ImageUpload/ImageUpload";
+import SelectCategory from "../Include/DynamicSelect/DynamicSelect";
 
 export default function ProductForm({
   open,
@@ -39,6 +40,7 @@ export default function ProductForm({
   const { t } = translateLauguage(language);
   const [url, setUrl] = useState("");
   const [typeCash, setTypeCash] = useState("USD");
+  const [selectCategory, setSelectCategory] = useState({ id: "", title: "" });
   const [loading, setLoading] = useState(false);
   //create
   const [createProduct] = useMutation(CREATE_PRODUCT, {
@@ -64,6 +66,7 @@ export default function ProductForm({
   const [updateProduct] = useMutation(UPDATE_PRODUCT, {
     onCompleted: ({ updateProduct }) => {
       setLoading(false);
+      console.log("createProduct===>", createProduct)
       if (updateProduct?.status === true) {
         setAlert(true, "success", updateProduct?.message);
         setRefetch();
@@ -72,7 +75,8 @@ export default function ProductForm({
         setAlert(true, "error", updateProduct?.message);
       }
     },
-    onError: (error) => {
+    onError: ({ message }) => {
+      console.log("Error :  ", message);
       setLoading(false);
     },
   });
@@ -80,6 +84,7 @@ export default function ProductForm({
   // formik user
   const CheckValidation = Yup.object().shape({
     price: Yup.string().required(t("required")),
+    category_id: Yup.string().required(t("required")),
     product_name: Yup.string().required(t("required")),
   });
 
@@ -96,21 +101,30 @@ export default function ProductForm({
           variables: {
             input: {
               ...values,
-              price: parseFloat(values.price),
               image: url,
-              type_cash: typeCash
+              type_cash: typeCash,
+              price: parseFloat(values.price),
             },
           },
         });
       } else {
+        console.log("updateProduct :", {
+          id: editData?._id,
+          input: {
+            ...values,
+            type_cash: typeCash,
+            price: parseFloat(values.price),
+            image: url ? url : editData.image,
+          },
+        },)
         updateProduct({
           variables: {
-            id: editData?._id,
+            updateProductId: editData?._id,
             input: {
               ...values,
-              price: parseFloat(values.price),
               image: url,
-              type_cash: typeCash
+              type_cash: typeCash,
+              price: parseFloat(values.price),
             },
           },
         });
@@ -119,6 +133,7 @@ export default function ProductForm({
   });
 
   const {
+    values,
     errors,
     touched,
     handleSubmit,
@@ -126,17 +141,24 @@ export default function ProductForm({
     getFieldProps,
     setFieldValue,
   } = formik;
-
+  console.log("values: ", values)
   useEffect(() => {
     if (open && dialogTitle === "Create") resetForm();
   }, [open]);
 
   useEffect(() => {
+    setFieldValue("category_id", selectCategory?.id)
+  }, [selectCategory])
+
+  useEffect(() => {
     if (editData) {
+      console.log("editData?.image :", editData?.image)
+      setUrl(editData?.image)
       setFieldValue("price", editData?.price ?? "");
       setFieldValue("product_name", editData?.product_name ?? "");
     }
-  }, [editData, open]);
+  }, [editData]);
+
   console.log("url==>", url)
   return (
     <Dialog open={open} className="dialog-container" fullWidth maxWidth="sm">
@@ -166,7 +188,7 @@ export default function ProductForm({
             <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <ImageUpload url={url} setUrl={setUrl} open={open} />
+                  <ImageUpload url={url ? url : editData?.image} setUrl={setUrl} open={open} />
                 </Grid>
                 <Grid item xs={12}>
                   <Typography
@@ -203,9 +225,7 @@ export default function ProductForm({
                   />
                 </Grid>
                 <Grid item xs={3}>
-                  <Typography className={language === "en" ? "field-title-en" : "field-title-kh"
-                  }
-                  >
+                  <Typography className={language === "en" ? "field-title-en" : "field-title-kh"}>
                     ប្រភេទ
                   </Typography>
                   <FormControl fullWidth size="small">
@@ -217,6 +237,33 @@ export default function ProductForm({
                       <MenuItem value={"KHR"}>KHR</MenuItem>
                     </Select>
                   </FormControl>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography className={language === "en" ? "field-title-en" : "field-title-kh"
+                  }
+                  >
+                    ប្រភេទ
+                  </Typography>
+                  <SelectCategory selectValue={selectCategory} setSelectValue={setSelectCategory} />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography
+                    className={
+                      language === "en" ? "field-title-en" : "field-title-kh"
+                    }
+                  >
+                    ការពិពណ៌នា
+                  </Typography>
+                  <TextField
+                    size="small"
+                    type="number"
+                    multiline
+                    rows={3}
+                    fullWidth
+                    {...getFieldProps("description")}
+                    error={Boolean(touched.description && errors.description)}
+                    helperText={touched.description && errors.description}
+                  />
                 </Grid>
               </Grid>
             </Form>

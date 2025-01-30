@@ -10,16 +10,23 @@ export default function ProductCard({ item }) {
     return (
         <Card>
             <CardMedia
+                height="180"
                 component="img"
                 alt="green iguana"
-                height="180"
                 image={item?.image}
             />
             <CardContent>
-                <Stack direction="row" alignItems="center" justifyContent="space-between">
-                    <Typography fontWeight="bold" fontSize={20}>
-                        {item?.product_name}
-                    </Typography>
+                <Stack direction="row" justifyContent="space-between">
+                    <Stack>
+
+                        <Typography fontWeight="bold" fontSize={20} color="#1976d2">
+                            {item?.product_name}
+                        </Typography>
+
+                        <Typography fontSize={14} color="gray">
+                            {item?.product_name}
+                        </Typography>
+                    </Stack>
                     <Typography fontSize={20} fontWeight="bold" color="#FC8019">
                         $  {item?.price.toFixed(2)}
                     </Typography>

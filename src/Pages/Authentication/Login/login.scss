@@ -1,0 +1,27 @@
+@import "../../../themes.scss";
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #ECECEC;
+  .container { 
+    padding: 30px;
+    background-color: white;
+    margin:  0 auto !important;
+    border-radius: 5px !important;
+    width: min(90%, 460px) !important; 
+    .text-field-title{
+      color: #0f81c2;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f81c2;
+    }
+
+    .sub-title {
+      text-align: center;
+    }
+  }
+ 
+}

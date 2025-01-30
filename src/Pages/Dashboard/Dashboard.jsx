@@ -13,6 +13,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState, useEffect } from "react";
 import { translateLauguage } from "../../Function/Translate";
 import ProductCard from "../../Component/Product/ProductCard";
+import { GET_CATEGORY } from "../../Schema/Category";
 
 export default function Dashboard() {
   const { language } = useContext(AuthContext);
@@ -21,6 +22,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
   const [tableData, setTableData] = useState([]);
+  const [categoryData, setCategoryData] = useState([]);
   const [keyword, setKeyword] = useState("");
   const { refetch } = useQuery(GET_PRODUCT, {
     onCompleted: ({ getProduct }) => {
@@ -33,9 +35,24 @@ export default function Dashboard() {
     },
   });
 
+
+
+  const { refetch: refetchCategory } = useQuery(GET_CATEGORY, {
+    onCompleted: ({ getCategory }) => {
+      setLoading(false);
+      if (getCategory) setCategoryData(getCategory);
+    },
+    onError: (error) => {
+      setLoading(true);
+      console.log(error.message);
+    },
+  });
   useEffect(() => {
+    refetchCategory();
     refetch();
   }, [keyword]);
+
+
   // ======================= Resize width Screen ======================
   const [width, setWidth] = useState(window.innerWidth);
   const updateDimensions = () => {
@@ -45,7 +62,7 @@ export default function Dashboard() {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
-
+  console.log("categoryData===>", categoryData)
   return (
     <div className="page-container">
       <Box sx={{ marginTop: "30px" }}>
@@ -53,8 +70,7 @@ export default function Dashboard() {
           <Grid item xs={12} sm={4} md={4} lg={2.4} xl={2.4}>
             <Stack direction="row" spacing={1}>
               <Chip label="All" color="primary" variant="outlined" sx={{ fontSize: 17, }} />
-              <Chip label="primary" color="primary" variant="outlined" sx={{ fontSize: 17, }} />
-              <Chip label="success" color="success" variant="outlined" />
+              {categoryData.map((e) => <Chip label={e?.category_name} color="primary" variant="outlined" sx={{ fontSize: 16, }} />)}
             </Stack>
           </Grid>
         </Grid>
